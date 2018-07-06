@@ -1,8 +1,8 @@
 package com.gslab.pepper.input;
 
-import com.gslab.pepper.PepperBoxLoadGenerator;
 import com.gslab.pepper.exception.PepperBoxException;
 import com.gslab.pepper.input.compile.InMemoryJavaCompiler;
+import com.gslab.pepper.sampler.PepperBoxKafkaSampler;
 import com.gslab.pepper.util.PropsKeys;
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  */
 public class SchemaTranslator {
 
-    private static Logger LOGGER = Logger.getLogger(PepperBoxLoadGenerator.class.getName());
+    private static Logger LOGGER = Logger.getLogger(PepperBoxKafkaSampler.class.getName());
 
     /**
      * Creates plain text iterator

@@ -9,7 +9,7 @@
     <version>1.0</version>
     <properties>
         <jmeter.version>3.1</jmeter.version>
-        <kafka.version>0.9.0.1</kafka.version>
+        <kafka.version>0.10.1.1</kafka.version>
         <jdk.version>1.8</jdk.version>
         <joda-time.version>2.9.7</joda-time.version>
         <guava.version>21.0</guava.version>
@@ -17,56 +17,44 @@
         <minimal-json.version>0.9.4</minimal-json.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jmeter.lib.scope>provided</jmeter.lib.scope>
+        <spring-kafka.version>1.1.2.RELEASE</spring-kafka.version>
+
     </properties>
 
-<dependencies>
-    <dependency>
-        <groupId>org.apache.jmeter</groupId>
-        <artifactId>ApacheJMeter_core</artifactId>
-        <version>${jmeter.version}</version>
-        <scope>${jmeter.lib.scope}</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.jmeter</groupId>
-        <artifactId>ApacheJMeter_java</artifactId>
-        <version>${jmeter.version}</version>
-        <scope>${jmeter.lib.scope}</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.kafka</groupId>
-        <artifactId>kafka_2.11</artifactId>
-        <version>${kafka.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.kafka</groupId>
-        <artifactId>kafka_2.11</artifactId>
-        <version>${kafka.version}</version>
-        <classifier>test</classifier>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.kafka</groupId>
-        <artifactId>kafka-clients</artifactId>
-        <version>${kafka.version}</version>
-        <classifier>test</classifier>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <groupId>joda-time</groupId>
-        <artifactId>joda-time</artifactId>
-        <version>${joda-time.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>${guava.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>com.eclipsesource.minimal-json</groupId>
-        <artifactId>minimal-json</artifactId>
-        <version>${minimal-json.version}</version>
-    </dependency>
-</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.jmeter</groupId>
+            <artifactId>ApacheJMeter_core</artifactId>
+            <version>${jmeter.version}</version>
+            <scope>${jmeter.lib.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jmeter</groupId>
+            <artifactId>ApacheJMeter_java</artifactId>
+            <version>${jmeter.version}</version>
+            <scope>${jmeter.lib.scope}</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+            <version>${spring-kafka.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda-time.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.eclipsesource.minimal-json</groupId>
+            <artifactId>minimal-json</artifactId>
+            <version>${minimal-json.version}</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <resources>

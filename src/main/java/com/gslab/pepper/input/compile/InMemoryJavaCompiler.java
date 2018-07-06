@@ -1,9 +1,13 @@
 package com.gslab.pepper.input.compile;
 
+import com.gslab.pepper.sampler.PepperBoxKafkaSampler;
+
 import javax.tools.JavaCompiler;
 import javax.tools.JavaFileObject;
 import javax.tools.ToolProvider;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * The InMemoryJavaCompiler uses java compiler to compile classes.
@@ -18,10 +22,14 @@ import java.util.Arrays;
 
 public class InMemoryJavaCompiler {
 
+    private static Logger LOGGER = Logger.getLogger(PepperBoxKafkaSampler.class.getName());
+
     //Java system compiler
     private static JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
 
     public static Class<?> compileSchemaClass(String className, String sourceCodeInText) throws Exception {
+
+        LOGGER.log(Level.SEVERE, "nnn " + compiler.toString());
 
         //Java code source Object
         SourceCode sourceCode = new SourceCode(className, sourceCodeInText);

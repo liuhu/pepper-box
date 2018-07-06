@@ -1,6 +1,5 @@
 package com.gslab.pepper.input.serialized;
 
-import com.gslab.pepper.PepperBoxLoadGenerator;
 import com.gslab.pepper.model.FieldExpressionMapping;
 import com.gslab.pepper.util.PropsKeys;
 import org.apache.jmeter.gui.ClearGui;
@@ -30,7 +29,7 @@ import java.util.logging.Logger;
  */
 public class ClassPropertyEditor extends PropertyEditorSupport implements ActionListener, TestBeanPropertyEditor, ClearGui {
 
-    private static Logger LOGGER = Logger.getLogger(PepperBoxLoadGenerator.class.getName());
+    private static Logger LOGGER = Logger.getLogger(ClassPropertyEditor.class.getName());
     //input class field
     private final JTextField textField = new JTextField();
 

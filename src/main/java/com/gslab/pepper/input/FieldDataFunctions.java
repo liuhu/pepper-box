@@ -12,6 +12,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
+import java.util.stream.LongStream;
 
 /**
  * The FieldDataFunctions is is set of builtin template function and can be invoked within {{ }}
@@ -21,6 +23,8 @@ import java.util.logging.Logger;
  * @since 01/03/2017
  */
 public class FieldDataFunctions {
+
+    public static  Random random2 = new Random();
 
     //Random value generator
     private static SplittableRandom random = new SplittableRandom();
@@ -335,6 +339,17 @@ public class FieldDataFunctions {
             log.log(Level.SEVERE, "Failed to generate IPV4", e);
         }
         return randomIPV4;
+    }
+
+    public static String AIP() {
+        Long[] ipRange = IpUtils.ipV4ToRange("190.190.16.0", 20);
+        System.out.println();
+        List<Long> aa = LongStream.rangeClosed(ipRange[0], ipRange[1]).boxed().collect(Collectors.toList());
+        return IpUtils.longToIpV4(aa.get(random2.nextInt(aa.size())));
+    }
+
+    public static void main(String[] args) {
+        System.out.println(AIP());
     }
 
     /**
