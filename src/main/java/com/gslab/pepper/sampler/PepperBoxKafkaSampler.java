@@ -122,6 +122,10 @@ public class PepperBoxKafkaSampler extends AbstractJavaSamplerClient {
                     UUID.randomUUID().toString(),
                     message_val);
 
+            sampleResult.setResponseData(message_val.toString(), StandardCharsets.UTF_8.name());
+            sampleResult.setSuccessful(true);
+            sampleResult.sampleEnd();
+
         } catch (Exception e) {
             log.error("Failed to send message", e);
             sampleResult.setResponseData(e.getMessage(), StandardCharsets.UTF_8.name());
